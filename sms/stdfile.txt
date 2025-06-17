@@ -1,4 +1,0 @@
-student: rahul id: 23 branch: csn
-student: ramu id: 83 branch: cso
-student: raju id: 23 branch: cso
-student: ravi id: 43 branch: csd
