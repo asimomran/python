@@ -3,41 +3,41 @@
 # then i will create a list probably inside the class itself
 # i will then return or print the name with a random troll at the last of the name
 import random
-import time
 from tkinter import *
-
-window = Tk()
-window.geometry("1000x500")
-window.title("A Little Game")
-entry = Entry(window)
-
-label = Label(window,text="TROLLING FRIENDS IS PURE FUN")
-label.config(background="black",foreground="darkblue")
-button = Button(window,text="confirm?")
 class troll:
-    def __init__(self,name):
-        print("processing.....")
+    def random_troll_name(self,name):
         self.name = name
-    
-    def random_troll_name(self):
         random_troll = random.choice(trolls_list)
-        time.sleep(3)
-        print(f"{self.name} {random_troll}")
+        new_name = self.name + random_troll
+        return new_name
 
 if __name__=="__main__":
+     
+    window = Tk()
+    window.title("This is a fun game")
+
+    entry = Entry(window)
+
+    label = Label(window)
+    
     trolls_list = ['baka','pervy sage','damn you','mudhead','-chan']
-    while True:         
-        name = input("enter your friend's name: (write exit to exit)")
+    def show_input():
+        name = entry.get()
         if name=="":
-            print("invalid bro")
-            break
-        elif name == "exit":
-            break
+            label.config(text="invalid bro")
+        elif name=="exit": 
+            window.quit()
         else:    
-            obj = troll(name)
-            obj.random_troll_name()
-            
-entry.pack()
-button.pack()
-label.pack()
-window.mainloop()
+            obj = troll()
+            final_name = obj.random_troll_name(name)
+            label.config(text=final_name)
+
+    button = Button(window,text="submit",command=show_input)
+    entry.pack()
+    button.pack()
+    label.pack()
+    window.mainloop()
+      
+        
+
+    
