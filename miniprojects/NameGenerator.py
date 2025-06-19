@@ -15,12 +15,26 @@ if __name__=="__main__":
      
     window = Tk()
     window.title("This is a fun game")
+    window.geometry("1000x500")
+    window.config(background="#1C2526")
 
-    entry = Entry(window)
-
-    label = Label(window)
+    label1 = Label(window,
+                   bg="#192A54",
+                   fg="#39FF14",
+                   font=("Impact", 40),
+                   text="TROLLING FRIENDS IS PURE FUN!!")
+    entry = Entry(window,
+                  font=("Comic Sans MS",40),
+                  fg="#FFFFFF",
+                  bg="#000000")
     
-    trolls_list = ['baka','pervy sage','damn you','mudhead','-chan']
+
+    label = Label(window,
+                  font=("Comic Sans MS",40),
+                  bg="#1C2526",
+                  fg="#39FF14")
+
+    trolls_list = [' baka',' pervy sage',' damn you',' mudhead','-chan']
     def show_input():
         name = entry.get()
         if name=="":
@@ -32,10 +46,18 @@ if __name__=="__main__":
             final_name = obj.random_troll_name(name)
             label.config(text=final_name)
 
-    button = Button(window,text="submit",command=show_input)
-    entry.pack()
-    button.pack()
-    label.pack()
+    button = Button(window,text="submit",
+                    command=show_input,
+                    font=("Comic Sans MS",27),
+                    bg="#2F4F4F",
+                    fg="#FFFF00",
+                    activebackground="#FF0090")
+
+
+    label1.pack()
+    entry.pack(anchor="w")
+    button.pack(anchor="w")
+    label.pack(anchor="center")
     window.mainloop()
       
         
