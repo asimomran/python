@@ -1,0 +1,1 @@
+# writing a simple python code using oops concept for understand encryption using encapsulation
